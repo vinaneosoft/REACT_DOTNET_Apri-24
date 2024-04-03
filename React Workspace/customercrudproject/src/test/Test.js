@@ -1,5 +1,17 @@
 import mixveg from "../Resources/mixveg.jpg"
 
+let message="";
+let age=12;
+
+function testAge(){
+    if(age<18)
+        message="SORRY YOU ARE NOT ALLOWED..";
+    else
+        message="WELCOME!!!! for Voting"
+    return message;
+}
+
+
 export function Test(){
     let orderType="a";
 
@@ -9,14 +21,12 @@ export function Test(){
         height:"200",
         width:"400"
     }
-    
-    let message="";
-    let age=32;
+
+   
     if(age<18)
         message="SORRY YOU ARE NOT ALLOWED..";
     else
         message="WELCOME!!!! for Voting"
-
 
     return (
         <>
@@ -32,7 +42,8 @@ export function Test(){
                 <img src={mixveg} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
             </figure>
             <b>{message}</b>
-
+            <p>{testAge()}</p>
+            <i>{ age<18 ? "SORRY YOU ARE NOT ALLOWED.." : "WELCOME!!!! for Voting" }</i>
         </>
     );
 }
