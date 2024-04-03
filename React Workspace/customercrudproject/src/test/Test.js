@@ -1,4 +1,4 @@
-
+import mixveg from "../Resources/mixveg.jpg"
 
 export function Test(){
     let orderType="a";
@@ -9,6 +9,14 @@ export function Test(){
         height:"200",
         width:"400"
     }
+    
+    let message="";
+    let age=32;
+    if(age<18)
+        message="SORRY YOU ARE NOT ALLOWED..";
+    else
+        message="WELCOME!!!! for Voting"
+
 
     return (
         <>
@@ -21,7 +29,10 @@ export function Test(){
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
+                <img src={mixveg} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
             </figure>
+            <b>{message}</b>
+
         </>
     );
 }
