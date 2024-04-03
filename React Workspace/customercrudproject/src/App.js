@@ -1,5 +1,6 @@
 import { Footer } from "./footer/Footer";
 import { Header } from "./header/Header";
+import { Test } from "./test/Test";
 import { Greeting } from "./testclass/Greeting";
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header></Header>
       <Greeting></Greeting>
+      <Test></Test>
       <Footer></Footer>
     </>
     

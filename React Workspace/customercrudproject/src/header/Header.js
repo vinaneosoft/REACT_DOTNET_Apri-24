@@ -2,11 +2,8 @@ import { Navbar } from "../navbar/Navbar";
 import "./Header.css"
 
 
-
-
-
 export function Header(){
-    let myHeading="CUSTOMER CRUP PROJECT";
+    let myHeading="CUSTOMER CRUD OPERATION"
 
     function getSubheading(){
         return "FOOD ORDER"
