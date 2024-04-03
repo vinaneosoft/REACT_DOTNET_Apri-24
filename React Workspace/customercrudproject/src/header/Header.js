@@ -2,9 +2,11 @@ import { Navbar } from "../navbar/Navbar";
 import "./Header.css"
 
 export function Header(){
+    let myHeading="CUSTOMER CRUP PROJECT";
+
     return (
         <header className="myHeader">
-            <h3>CUSTOMER CRUD</h3>
+            <h4>{myHeading}</h4>
             <Navbar></Navbar>
         </header>
     );
