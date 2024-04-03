@@ -1,0 +1,7 @@
+.myFooter{
+    background-color: chocolate;
+    border: 5px dashed darkblue;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
