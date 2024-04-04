@@ -2,7 +2,7 @@
 export function NonVegFood(){
     return (
         <>
-            <h4>Non Veg Main Course</h4>
+            <h5>Non Veg Main Course</h5>
             <ol class="list-group">
                 <li class="list-group-item">Chicken Curry</li>
                 <li class="list-group-item">Fish Fry</li>

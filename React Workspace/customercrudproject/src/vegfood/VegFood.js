@@ -2,7 +2,7 @@
 export function VegFood(){
     return (
         <>
-            <h4>Veg Main Course</h4>
+            <h5>Veg Main Course</h5>
             <ol class="list-group">
                 <li class="list-group-item">Mix Veg</li>
                 <li class="list-group-item">Paneer Kadhai</li>
