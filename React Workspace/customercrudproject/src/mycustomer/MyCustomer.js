@@ -17,21 +17,21 @@ export function MyCustomer(){
     );
 
     let cards=customers.map(customer=>
-        <div className="col-md-3">
+        <div className="col-md-3 border border-3 border-success">
             <div className="card bg-warning">
             <img src="..." className="card-img-top" alt="..."></img>
             <div className="card-body">
+                <h5 className="card-title">#{customer.id}</h5>
                 <h5 className="card-title">{customer.customerName}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">An item</li>
-                <li className="list-group-item">A second item</li>
-                <li className="list-group-item">A third item</li>
+                <li className="list-group-item"><small>Email Id: </small><b>{customer.customerEmail}</b></li>
+                <li className="list-group-item"><small>Mobile No: </small><b>{customer.customerContact}</b></li>
+                <li className="list-group-item"><small>Username: </small><b>{customer.username}</b></li>
             </ul>
             <div className="card-body">
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
+                <a href="#" className="card-link">EDIT</a>
+                <a href="#" className="card-link">DELETE</a>
             </div>
             </div>
         </div>
