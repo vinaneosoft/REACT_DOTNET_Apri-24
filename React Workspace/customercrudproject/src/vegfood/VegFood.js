@@ -2,7 +2,7 @@
 export function VegFood(){
     let vegFoods=["Mix Veg","Paneer Kadhai","Panner Masala","Malai Paneer"];
 
-    let liNodes= vegFoods.map(vfood=><li key={vfood} className="list-group-item">{vfood}</li>);
+    let liNodes= vegFoods.map((vfood, ind)=><li key={ind} className="list-group-item">{vfood}</li>);
 
     return (
         <>
