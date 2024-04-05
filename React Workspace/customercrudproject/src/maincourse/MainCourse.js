@@ -6,7 +6,6 @@ import { VegFood } from "../vegfood/VegFood";
 export function MainCourse(){
     let foodType=""; // in future we will use logic of checkboxes here
     let component;
-
     if(foodType==undefined || foodType == "")
     component=<><VegFood></VegFood><NonVegFood></NonVegFood></>
     else{
