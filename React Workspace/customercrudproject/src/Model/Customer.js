@@ -7,6 +7,5 @@ export class Customer{
         this.password=password;
         this.username=username;
     }
-
 }
 
