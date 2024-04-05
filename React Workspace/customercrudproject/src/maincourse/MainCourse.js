@@ -1,4 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
+
 import { NonVegFood } from "../nonvegfood/NonVegFood";
 import { VegFood } from "../vegfood/VegFood";
 
@@ -9,7 +9,7 @@ export function MainCourse(){
     if(foodType===undefined || foodType === "")
     component=<><VegFood></VegFood><NonVegFood></NonVegFood></>
     else{
-        if(foodType=="veg")
+        if(foodType==="veg")
             component=<VegFood></VegFood>
         else
             component=<NonVegFood></NonVegFood>
