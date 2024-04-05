@@ -1,4 +1,4 @@
-class Customer{
+export class Customer{
     constructor(id="c",customerName="CCC", customerEmail="", customerContact=0, username="cc", password="cc"){
         this.id=id;
         this.customerName=customerName;
