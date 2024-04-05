@@ -1,13 +1,13 @@
 
 export function NonVegFood(){
+    let nonvegFoods=["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"];
+    let liNodes= nonvegFoods.map((nvfood, ind)=><li key={ind} className="list-group-item">{nvfood}</li>);
+
     return (
         <>
             <h5>Non Veg Main Course</h5>
-            <ol class="list-group">
-                <li class="list-group-item">Chicken Curry</li>
-                <li class="list-group-item">Fish Fry</li>
-                <li class="list-group-item">Murg Mussallam</li>
-                <li class="list-group-item">Mutton Masala</li>
+            <ol className="list-group">
+                {liNodes}
             </ol>
         </>
     );
