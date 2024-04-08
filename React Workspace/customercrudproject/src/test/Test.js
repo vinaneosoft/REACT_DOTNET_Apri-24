@@ -12,7 +12,7 @@ function testAge(){
 }
 
 
-export function Test(){
+export function Test(props){
     let orderType="a";
 
     let imageObject={
@@ -53,6 +53,7 @@ export function Test(){
             <button onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
             <button onClick={(ev)=>console.log(ev)}>CLICK</button>
             <button onClick={testEvent}>CLICK</button>
+            <button onClick={props.testFun}>CALL PARENT</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>

@@ -8,6 +8,9 @@ import { Greeting } from "./testclass/Greeting";
 
 
 function App() {
+  function test(){
+    alert("Parent function called")
+  }
   return (
     <>
       <Header></Header>
@@ -15,7 +18,7 @@ function App() {
        */}
      {/*  <MainCourse></MainCourse> */}
       {/* <MyCustomer></MyCustomer> */}
-      <Test></Test>
+      <Test  testFun={test}></Test>
       <Footer firstname="Vinay" lastname="Patil"></Footer>
     </>
     

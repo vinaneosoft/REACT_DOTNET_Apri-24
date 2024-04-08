@@ -7,6 +7,7 @@ export function Footer({firstname,lastname}){
                 <b>Author Name :<span>{firstname} {lastname}</span> </b>
                 <small>Copyright by ......</small>
             </p>
+         
         </footer>
     );
 }
