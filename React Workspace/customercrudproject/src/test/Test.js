@@ -34,8 +34,6 @@ export function Test(){
     function addTest(a,b){
         alert(a+b);
     }
-
-
     return (
         <>
             <ol type={orderType}>
@@ -49,8 +47,7 @@ export function Test(){
            {/*  /* inline/arrow funciton in jsx elements */ }
             <button onClick={()=>alert("logic in arrow function....")}>CLICK TO TEST REACT EVENT</button>
            {/*  /* call p-function */ }
-            <button 
-            onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
+            <button onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
