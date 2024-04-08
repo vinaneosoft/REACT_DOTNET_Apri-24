@@ -12,9 +12,10 @@ function App() {
     <>
       <Header></Header>
       {/* <Greeting></Greeting>
-      <Test></Test> */}
+       */}
      {/*  <MainCourse></MainCourse> */}
-      <MyCustomer></MyCustomer>
+      {/* <MyCustomer></MyCustomer> */}
+      <Test></Test>
       <Footer></Footer>
     </>
     

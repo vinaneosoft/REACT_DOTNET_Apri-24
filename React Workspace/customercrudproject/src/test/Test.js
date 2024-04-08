@@ -28,6 +28,14 @@ export function Test(){
     else
         message="WELCOME!!!! for Voting"
 
+    function showAlert(){
+        alert("BUTTON CLICKED..........");
+    }
+    function addTest(a,b){
+        alert(a+b);
+    }
+
+
     return (
         <>
             <ol type={orderType}>
@@ -36,6 +44,13 @@ export function Test(){
                 <li>Veg Kadhai</li>
                 <li>Veg Kadhai</li>
             </ol>
+            {/*   put only name of the function if function is non-p  */}
+            <button onClick={showAlert}>CLICK TO TEST REACT EVENT</button>
+           {/*  /* inline/arrow funciton in jsx elements */ }
+            <button onClick={()=>alert("logic in arrow function....")}>CLICK TO TEST REACT EVENT</button>
+           {/*  /* call p-function */ }
+            <button 
+            onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
