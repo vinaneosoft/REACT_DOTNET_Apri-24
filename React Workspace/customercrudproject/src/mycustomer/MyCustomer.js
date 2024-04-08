@@ -1,5 +1,6 @@
-import { getCustomers } from "../Model/CustomerCrud";
+import "./MyCustomer.css"
 
+import { getCustomers } from "../Model/CustomerCrud";
 
 
 export function MyCustomer(){
@@ -19,7 +20,9 @@ export function MyCustomer(){
     let cards=customers.map(customer=>
         <div key={customer.id} className="col-md-3 border border-3 border-success">
             <div className="card bg-warning">
-            <img src={require("../Resources/mixveg.jpg")} className="card-img-top" alt="..."></img>
+    
+            <img src={require("../Resources/"+customer.customerImage)} className="card-img-top profilePic" alt="..."></img>
+           
             <div className="card-body">
                 <h5 className="card-title">#{customer.id}</h5>
                 <h5 className="card-title">{customer.customerName}</h5>

@@ -1,4 +1,4 @@
 1. save sample customer images in Resources folder
-2. add new instance variable in cn. as customerImage
-3. pass image path (relative path) while creating object
+2. add new instance variable in constructor as customerImage with some default value
+3. pass image name while creating object
 4. use require in src attribute of img tag
