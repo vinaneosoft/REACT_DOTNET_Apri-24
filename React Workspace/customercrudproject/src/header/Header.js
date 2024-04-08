@@ -3,7 +3,7 @@ import "./Header.css"
 
 
 export function Header(){
-    let myHeading="CUSTOMER CRUD OPERATION"
+    let myHeading="Ani's Food"
 
     function getSubheading(){
         return "FOOD ORDER"
@@ -13,7 +13,7 @@ export function Header(){
         <header className="myHeader">
             <h4>{myHeading}</h4>
             <h5>{getSubheading()}</h5>
-            <Navbar></Navbar>
+            <Navbar  heading={myHeading}></Navbar> {/** passing data from Header to Navbar  */}
         </header>
     );
 }
