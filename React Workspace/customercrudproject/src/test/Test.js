@@ -22,6 +22,8 @@ export function Test(props){
         width:"400"
     }
 
+    let companyName="NEOSOFT";
+
    
     if(age<18)
         message="SORRY YOU ARE NOT ALLOWED..";
@@ -53,7 +55,7 @@ export function Test(props){
             <button onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
             <button onClick={(ev)=>console.log(ev)}>CLICK</button>
             <button onClick={testEvent}>CLICK</button>
-            <button onClick={props.testFun}>CALL PARENT</button>
+            <button onClick={()=>props.testFun(companyName)}>CALL PARENT</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>

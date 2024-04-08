@@ -8,8 +8,8 @@ import { Greeting } from "./testclass/Greeting";
 
 
 function App() {
-  function test(){
-    alert("Parent function called")
+  function test(datafromChild){
+    alert("Parent function called " + datafromChild)
   }
   return (
     <>
