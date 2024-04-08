@@ -34,6 +34,9 @@ export function Test(){
     function addTest(a,b){
         alert(a+b);
     }
+    function testEvent(e){
+        console.log(e);
+    }
     return (
         <>
             <ol type={orderType}>
@@ -48,6 +51,8 @@ export function Test(){
             <button onClick={()=>alert("logic in arrow function....")}>CLICK TO TEST REACT EVENT</button>
            {/*  /* call p-function */ }
             <button onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
+            <button onClick={(ev)=>console.log(ev)}>CLICK</button>
+            <button onClick={testEvent}>CLICK</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
