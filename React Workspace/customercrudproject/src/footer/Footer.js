@@ -1,10 +1,10 @@
 import "./Footer.css"
 
-export function Footer(){
+export function Footer({firstname,lastname}){
     return (
         <footer className="myFooter">
             <p>
-                <b>Author Name : Vina Patil </b>
+                <b>Author Name :<span>{firstname} {lastname}</span> </b>
                 <small>Copyright by ......</small>
             </p>
         </footer>

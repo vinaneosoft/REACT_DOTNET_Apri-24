@@ -16,7 +16,7 @@ function App() {
      {/*  <MainCourse></MainCourse> */}
       {/* <MyCustomer></MyCustomer> */}
       <Test></Test>
-      <Footer></Footer>
+      <Footer firstname="Vinay" lastname="Patil"></Footer>
     </>
     
   );
