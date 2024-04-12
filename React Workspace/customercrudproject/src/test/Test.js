@@ -1,18 +1,30 @@
+import { useState } from "react";
 import mixveg from "../Resources/mixveg.jpg"
 
 let message="";
-let age=12;
 
-function testAge(){
+
+/* function testAge(age){
     if(age<18)
         message="SORRY YOU ARE NOT ALLOWED..";
     else
         message="WELCOME!!!! for Voting"
     return message;
 }
-
+ */
 
 export function Test(props){
+   
+    let [age, changeAge]=useState(12);  // returns current state of vairable and function ref to change the state
+    /** pass initial state from useState hook , input is still immutable. u have to bind onChage event
+     *  age: variable holding current state,
+     * changeAge : function ref , function is changing the state of age variable
+     */
+    function handleEvent(event){
+        console.log(event);
+        changeAge(event.target.value);
+    }
+
     let orderType="a";
 
     let imageObject={
@@ -61,8 +73,14 @@ export function Test(props){
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={mixveg} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
             </figure>
+            <div>
+                <input type="number" placeholder="Enter Age" value={age} onChange={handleEvent}></input>
+                <input type="number" placeholder="Enter Age" value={age} onChange={(event)=>changeAge(event.target.value)}></input>
+                <p>
+                    <b>Entered Age is : <span>{age}</span></b>
+                </p>
+            </div>
             <b>{message}</b>
-            <p>{testAge()}</p>
             <i>{ age<18 ? "SORRY YOU ARE NOT ALLOWED.." : "WELCOME!!!! for Voting" }</i>
         </>
     );

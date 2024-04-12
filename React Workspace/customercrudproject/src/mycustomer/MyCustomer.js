@@ -20,7 +20,7 @@ export function MyCustomer(){
 
     let cards=customers.map(customer=>
         <div key={customer.id} className="col-md-3 border border-3 border-success">
-            <CustomerCard customer={customer}></CustomerCard>
+           <CustomerCard customer={customer}></CustomerCard>
         </div>
         );
     return(
