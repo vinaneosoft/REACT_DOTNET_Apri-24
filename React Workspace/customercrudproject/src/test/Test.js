@@ -14,17 +14,15 @@ let message="";
  */
 
 export function Test(props){
-   
     let [age, changeAge]=useState(12);  // returns current state of vairable and function ref to change the state
     /** pass initial state from useState hook , input is still immutable. u have to bind onChage event
      *  age: variable holding current state,
      * changeAge : function ref , function is changing the state of age variable
      */
     function handleEvent(event){
-        console.log(event);
+       /*  console.log(event); */
         changeAge(event.target.value);
     }
-
     let orderType="a";
 
     let imageObject={
