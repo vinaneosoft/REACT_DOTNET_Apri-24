@@ -19,9 +19,9 @@ export function Test(props){
      *  age: variable holding current state,
      * changeAge : function ref , function is changing the state of age variable
      */
-    function handleEvent(event){
+    function handleEvent(e){
        /*  console.log(event); */
-        changeAge(event.target.value);
+        changeAge(e.target.value);
     }
     let orderType="a";
 
@@ -73,7 +73,7 @@ export function Test(props){
             </figure>
             <div>
                 <input type="number" placeholder="Enter Age" value={age} onChange={handleEvent}></input>
-                <input type="number" placeholder="Enter Age" value={age} onChange={(event)=>changeAge(event.target.value)}></input>
+                <input type="number" placeholder="Enter Age" value={age} onChange={event=>changeAge(event.target.value)}></input>
                 <p>
                     <b>Entered Age is : <span>{age}</span></b>
                 </p>

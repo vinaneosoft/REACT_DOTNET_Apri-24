@@ -1,5 +1,5 @@
 export function CustomerCard({customer}){
-    console.log(customer.customerImage);
+   /*  console.log(customer.customerImage); */
     return(
         <div className="card bg-warning">
             <img src={require("../Resources/"+customer.customerImage)} className="card-img-top profilePic" alt="..."></img>
