@@ -8,6 +8,9 @@ let customers=[
     new Customer("c2","Kiran Pujari","kiran@gmail.com", 9090909090,"kiran","kiran@123", "customer5.jpg"),
     new Customer("c32","Ritu Khanna","Ritu@gmail.com", 8686868686,"ritu","ritu@123"),
 ]
+export function addCustmer(customer){
+    customers.push(customer);
+}
 
 export function getCustomers(){
     return customers;
