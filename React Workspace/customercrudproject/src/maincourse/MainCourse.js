@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NonVegFood } from "../nonvegfood/NonVegFood";
 import { VegFood } from "../vegfood/VegFood";
 
@@ -12,6 +12,7 @@ export function MainCourse(){
         setType(e.target.value);
     }
     
+  
     return (
         <section>
             <h4>Main Course</h4>

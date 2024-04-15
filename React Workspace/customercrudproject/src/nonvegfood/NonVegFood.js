@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-
+import {useEffect} from "react"
 export function NonVegFood(){
     let [nonvegFoods, updateArray]= useState(["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"]);
     
@@ -12,6 +12,15 @@ export function NonVegFood(){
       //  nonvegFoods.push(inputElement.current.value); // it wont work
       updateArray([...nonvegFoods,inputElement.current.value]) // it will work
     }
+
+    useEffect(()=>{
+        console.log("nonveg food component");
+        console.log(nonvegFoods);
+        return ()=>{
+            console.log("implement clean up logic here....");
+        }
+    }, [nonvegFoods]);
+
     return (
         <>
             <h5>Non Veg Main Course</h5>
