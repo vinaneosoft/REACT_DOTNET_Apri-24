@@ -20,10 +20,10 @@ function App() {
       <Header></Header>
       {/* <Greeting></Greeting>
        */}
-     {/*  <MainCourse></MainCourse> */}
-    <MyCustomer></MyCustomer>
-    <Register></Register>
-      <Test  testFun={test} testFun2={test2}></Test> 
+     <MainCourse></MainCourse> 
+    {/* <MyCustomer></MyCustomer> */}
+  {/*   <Register></Register> */}
+     {/*  <Test  testFun={test} testFun2={test2}></Test>  */}
       <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </>
     

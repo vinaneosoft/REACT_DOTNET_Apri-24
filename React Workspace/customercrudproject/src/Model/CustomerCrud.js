@@ -10,7 +10,7 @@ let customers=[
 ]
 export function addCustmer(customer){
     console.log(customer);
-    customers.push(customer); // mutable array
+    customers.push(customer); // mutable array : avoid it
     console.log(customers); // immutable  array logic is pending : spread operator
 }
 
