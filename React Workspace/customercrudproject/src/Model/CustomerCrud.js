@@ -9,7 +9,9 @@ let customers=[
     new Customer("c32","Ritu Khanna","Ritu@gmail.com", 8686868686,"ritu","ritu@123"),
 ]
 export function addCustmer(customer){
-    customers.push(customer);
+    console.log(customer);
+    customers.push(customer); // mutable array
+    console.log(customers); // immutable  array logic is pending : spread operator
 }
 
 export function getCustomers(){

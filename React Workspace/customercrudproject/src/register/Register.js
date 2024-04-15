@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Customer } from "../Model/Customer";
+import { addCustmer } from "../Model/CustomerCrud";
 
 
 export function Register(){
@@ -16,7 +17,9 @@ export function Register(){
      }
      function collectData(e){
         e.preventDefault();
-        console.log(customer);
+       // console.log(customer);
+
+        addCustmer(customer);
      }
 
     return (
