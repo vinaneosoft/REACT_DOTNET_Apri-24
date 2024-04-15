@@ -10,6 +10,7 @@ export function NonVegFood(){
        console.log(inputElement.current); // returns DOM element which is refered using useRef
        console.log(inputElement.current.value); // value of DOM element
       //  nonvegFoods.push(inputElement.current.value); // it wont work
+      updateArray([...nonvegFoods,inputElement.current.value]) // it will work
     }
     return (
         <>
