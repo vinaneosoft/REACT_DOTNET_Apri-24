@@ -63,9 +63,10 @@ export function Test(props){
             <button onClick={()=>alert("logic in arrow function....")}>CLICK TO TEST REACT EVENT</button>
            {/*  /* call p-function */ }
             <button onClick={()=>addTest(45,78)}>CLICK TO TEST REACT EVENT</button>
-            <button onClick={(ev)=>console.log(ev)}>CLICK</button>
-            <button onClick={testEvent}>CLICK</button>
+            <button onClick={(ev)=>console.log(ev)}>CLICK ARROW</button>
+            <button onClick={testEvent}>CLICK EVENT</button>
             <button onClick={()=>props.testFun(companyName)}>CALL PARENT</button>
+            <button onClick={()=>props.testFun2(companyName)}>CALL PARENT</button>
             <figure>
                 <img src={imageObject.imagePath} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>
                 <img src={require("../Resources/mixveg.jpg")} alt={imageObject.altMessage} height={imageObject.height} width={imageObject.width}></img>

@@ -12,6 +12,9 @@ function App() {
   function test(datafromChild){
     alert("Parent function called " + datafromChild)
   }
+  function test2(datafromChild){
+    alert("Parent function called " + datafromChild)
+  }
   return (
     <>
       <Header></Header>
@@ -20,8 +23,8 @@ function App() {
      {/*  <MainCourse></MainCourse> */}
     <MyCustomer></MyCustomer>
     <Register></Register>
-     {/*  <Test  testFun={test}></Test> */}
-      <Footer firstname="Vinay" lastname="Patil"></Footer>
+      <Test  testFun={test} testFun2={test2}></Test> 
+      <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </>
     
   );

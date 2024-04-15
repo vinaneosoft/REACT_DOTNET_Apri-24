@@ -1,6 +1,6 @@
 import "./Footer.css"
 
-export function Footer({firstname,lastname}){
+export function Footer({firstname,lastname}){  //props object
     return (
         <footer className="myFooter">
             <p>
