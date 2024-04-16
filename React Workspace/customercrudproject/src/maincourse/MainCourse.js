@@ -20,9 +20,6 @@ export function MainCourse(){
         counter2.current=counter2.current+1; // component does not get re rendered if ref value is getting updated
         console.log(counter2.current);
     }
-   
-
-
     useEffect(()=>{
         console.log("after Component gets rendered, useEffect gets called...");
     });
