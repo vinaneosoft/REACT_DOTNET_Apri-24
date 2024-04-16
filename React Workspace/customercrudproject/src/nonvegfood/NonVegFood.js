@@ -1,6 +1,9 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import {useEffect} from "react"
+import { MyContext } from "../App";
 export function NonVegFood(){
+    let food=useContext(MyContext);
+    
     let [nonvegFoods, updateArray]= useState(["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"]);
     
     let liNodes= nonvegFoods.map((nvfood, ind)=><li key={ind} className="list-group-item">{nvfood}</li>);
@@ -11,8 +14,9 @@ export function NonVegFood(){
        console.log(inputElement.current.value); // value of DOM element
       //  nonvegFoods.push(inputElement.current.value); // it wont work
       updateArray([...nonvegFoods,inputElement.current.value]) // it will work
+      console.log(food);
     }
-
+   
     useEffect(()=>{
        // console.log("nonveg food component");
        // console.log(nonvegFoods);
@@ -24,6 +28,7 @@ export function NonVegFood(){
     return (
         <>
             <h5>Non Veg Main Course</h5>
+            <b>Data from parent: { food}</b>
             <ol className="list-group">
                 {liNodes}
             </ol>

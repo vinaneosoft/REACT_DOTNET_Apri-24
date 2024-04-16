@@ -3,7 +3,6 @@ export function VegFood(){
     let vegFoods=["Mix Veg","Paneer Kadhai","Panner Masala","Malai Paneer"];
 
     let liNodes= vegFoods.map((vfood, ind)=><li key={ind} className="list-group-item">{vfood}</li>);
-
     useEffect(()=>{
        // console.log("Additional settings to do after component is rendered");
         return ()=>{
@@ -14,7 +13,6 @@ export function VegFood(){
     function cleanUp(){
        // console.log("seperate function for cleanup");
     }
-
     return (
         <>
             <h5>Veg Main Course</h5>
