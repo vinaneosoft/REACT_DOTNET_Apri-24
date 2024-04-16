@@ -5,14 +5,14 @@ export function VegFood(){
     let liNodes= vegFoods.map((vfood, ind)=><li key={ind} className="list-group-item">{vfood}</li>);
 
     useEffect(()=>{
-        console.log("Additional settings to do after component is rendered");
+       // console.log("Additional settings to do after component is rendered");
         return ()=>{
-            console.log("implement clean up logic here....");
+          //  console.log("implement clean up logic here....");
             cleanUp();
         }
     });
     function cleanUp(){
-        console.log("seperate function for cleanup");
+       // console.log("seperate function for cleanup");
     }
 
     return (

@@ -14,10 +14,10 @@ export function NonVegFood(){
     }
 
     useEffect(()=>{
-        console.log("nonveg food component");
-        console.log(nonvegFoods);
+       // console.log("nonveg food component");
+       // console.log(nonvegFoods);
         return ()=>{
-            console.log("implement clean up logic here....");
+          //  console.log("implement clean up logic here....");
         }
     }, [nonvegFoods]);
 
