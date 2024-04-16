@@ -1,5 +1,6 @@
 import { Footer } from "./footer/Footer";
 import { Header } from "./header/Header";
+import { Login } from "./login/Login";
 import { MainCourse } from "./maincourse/MainCourse";
 import { MyCustomer } from "./mycustomer/MyCustomer";
 import { Register } from "./register/Register";
@@ -20,7 +21,8 @@ function App() {
       <Header></Header>
       {/* <Greeting></Greeting>
        */}
-     <MainCourse></MainCourse> 
+    {/*  <MainCourse></MainCourse>  */}
+    <Login></Login>
     {/* <MyCustomer></MyCustomer> */}
   {/*   <Register></Register> */}
      {/*  <Test  testFun={test} testFun2={test2}></Test>  */}
