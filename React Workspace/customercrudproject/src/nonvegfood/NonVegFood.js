@@ -6,7 +6,9 @@ export function NonVegFood(){
     /**useContext is a React Hook that lets you read and subscribe to 
      * context from your component. */
 
-    let object=useContext(MyContext);
+    let object=useContext(MyContext); // 4.
+
+
     let [nonvegFoods, updateArray]= useState(["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"]);
     
     let styleArray=["list-group-item",object.color]
@@ -31,7 +33,7 @@ export function NonVegFood(){
     return (
         <section className={object.color}>
             <h5>Non Veg Main Course</h5>
-            <b>Data from parent: { object.color} {object.food}</b>
+            <b>Data from parent: { object.color} {object.food}</b> {/* //5 */}
             <ol className="list-group">
                 {liNodes}
             </ol>

@@ -11,10 +11,13 @@ import { MyContext } from "./context/MyContext";
 
 
 
+
 function App() {
+
+
   let[nvfood, setFood]=useState("Prawns Tawa Fry");
   let [textColor, setColor]=useState("text-warning");
-  let myData={
+  let myData={                //2
     food:nvfood,
     color:textColor
   }
@@ -30,7 +33,7 @@ function App() {
   }
   return (
     <>
-    <MyContext.Provider value={myData}>
+    <MyContext.Provider value={myData}>   {/*  3. */}
       <Header></Header>
       {/* <Greeting></Greeting>*/}
        <MainCourse></MainCourse> 
