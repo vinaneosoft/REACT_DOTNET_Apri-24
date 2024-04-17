@@ -1,14 +1,17 @@
 import { useContext, useRef, useState } from "react";
 import {useEffect} from "react"
-import { MyContext } from "../App";
+import { MyContext } from "../context/MyContext";
+
 export function NonVegFood(){
     /**useContext is a React Hook that lets you read and subscribe to 
      * context from your component. */
 
-    let food=useContext(MyContext);
+    let object=useContext(MyContext);
     let [nonvegFoods, updateArray]= useState(["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"]);
     
-    let liNodes= nonvegFoods.map((nvfood, ind)=><li key={ind} className="list-group-item">{nvfood}</li>);
+    let styleArray=["list-group-item",object.color]
+
+    let liNodes= nonvegFoods.map((nvfood, ind)=><li key={ind} className={styleArray}>{nvfood}</li>);
     /** apply reference to any DOM element and we can extract value from that DOM */
     const inputElement=useRef();
     function getFood(){
@@ -16,7 +19,6 @@ export function NonVegFood(){
        console.log(inputElement.current.value); // value of DOM element
       //  nonvegFoods.push(inputElement.current.value); // it wont work
       updateArray([...nonvegFoods,inputElement.current.value]) // it will work
-      console.log(food);
     }
     useEffect(()=>{
        // console.log("nonveg food component");
@@ -27,9 +29,9 @@ export function NonVegFood(){
     }, [nonvegFoods]);
 
     return (
-        <>
+        <section className={object.color}>
             <h5>Non Veg Main Course</h5>
-            <b>Data from parent: { food}</b>
+            <b>Data from parent: { object.color} {object.food}</b>
             <ol className="list-group">
                 {liNodes}
             </ol>
@@ -41,7 +43,7 @@ export function NonVegFood(){
             <div>
               {/*   <button onClick={()=>setFood("new food")}>change food</button> */}
             </div>
-        </>
+        </section>
     );
 
 }

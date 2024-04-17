@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Footer } from "./footer/Footer";
 import { Header } from "./header/Header";
 import { Login } from "./login/Login";
@@ -7,13 +7,20 @@ import { MyCustomer } from "./mycustomer/MyCustomer";
 import { Register } from "./register/Register";
 import { Test } from "./test/Test";
 import { Greeting } from "./testclass/Greeting";
+import { MyContext } from "./context/MyContext";
 
-export let MyContext=createContext();
+
 
 function App() {
   let[nvfood, setFood]=useState("Prawns Tawa Fry");
+  let [textColor, setColor]=useState("text-warning");
+  let myData={
+    food:nvfood,
+    color:textColor
+  }
   setTimeout(()=>{
     setFood("Prawns Masala")
+    setColor("text-danger");
   },6000);
   function test(datafromChild){
     alert("Parent function called " + datafromChild)
@@ -23,7 +30,7 @@ function App() {
   }
   return (
     <>
-    <MyContext.Provider value={nvfood}>
+    <MyContext.Provider value={myData}>
       <Header></Header>
       {/* <Greeting></Greeting>*/}
        <MainCourse></MainCourse> 
