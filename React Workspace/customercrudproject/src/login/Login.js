@@ -3,6 +3,7 @@
  */
 
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 export function Login(){
     let usernameNode=useRef();
@@ -18,6 +19,7 @@ export function Login(){
 
 
     return(
+        <section>
         <form onSubmit={collectData}>
              <div className="mb-3">
                 <label htmlFor="loginType" className="form-label">Select Login Type</label>
@@ -41,5 +43,9 @@ export function Login(){
             </div>
             <input type="submit" className="btn btn-primary" defaultValue="SUBMIT"></input> 
         </form>
+        <p>
+            Not yet registered??? Sign up from <Link to="/register">here</Link>
+        </p>
+        </section>
     );
 }

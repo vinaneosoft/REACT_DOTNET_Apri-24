@@ -7,7 +7,8 @@ import { MyCustomer } from "./mycustomer/MyCustomer";
 import { Register } from "./register/Register";
 
 import { MyContext } from "./context/MyContext";
-import { Route, Routes } from "react-router-dom";  //2.
+import { Navigate, Route, Routes } from "react-router-dom";  //2.
+import { Home } from "./home/Home";
 
 
 
@@ -36,7 +37,10 @@ function App() {
     <MyContext.Provider value={myData}>   {/*  3. */}
       <Header></Header>
      <Routes>
+          <Route path="/" element={<Navigate to="home"></Navigate>}></Route>
+          <Route path="home" element={ <Home/> }></Route>
           <Route path="register" element={  <Register/>  }></Route>
+          <Route path="login" element={ <Login/> }></Route>
      </Routes>
       <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </MyContext.Provider>

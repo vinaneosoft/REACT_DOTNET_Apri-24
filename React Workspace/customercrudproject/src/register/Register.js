@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Customer } from "../Model/Customer";
 import { addCustmer } from "../Model/CustomerCrud";
+import { Link } from "react-router-dom";
 
 
 export function Register(){
@@ -52,6 +53,9 @@ export function Register(){
                 </div>
                 <input type="submit" className="btn btn-primary" defaultValue="REGISTER"></input>
             </form>
+            <p>
+                <i>Already a user??? click <Link to="/login">here</Link> to login!!!!</i>
+            </p>
         </section>
     );
 }
