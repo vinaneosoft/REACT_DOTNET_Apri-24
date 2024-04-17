@@ -2,8 +2,10 @@ import { useContext, useRef, useState } from "react";
 import {useEffect} from "react"
 import { MyContext } from "../App";
 export function NonVegFood(){
+    /**useContext is a React Hook that lets you read and subscribe to 
+     * context from your component. */
+
     let food=useContext(MyContext);
-    
     let [nonvegFoods, updateArray]= useState(["Chicken Curry","Surmai Fish Fry","Murg Mussallam","Mutton Masala"]);
     
     let liNodes= nonvegFoods.map((nvfood, ind)=><li key={ind} className="list-group-item">{nvfood}</li>);
@@ -16,7 +18,6 @@ export function NonVegFood(){
       updateArray([...nonvegFoods,inputElement.current.value]) // it will work
       console.log(food);
     }
-   
     useEffect(()=>{
        // console.log("nonveg food component");
        // console.log(nonvegFoods);
@@ -36,6 +37,9 @@ export function NonVegFood(){
                 <h6>For Admin</h6>
                 <input type="text" placeholder="Enter nonveg food item" ref={inputElement}></input> {/* uncontrolled input controls */}
                 <button onClick={getFood}>CLICK</button>
+            </div>
+            <div>
+              {/*   <button onClick={()=>setFood("new food")}>change food</button> */}
             </div>
         </>
     );

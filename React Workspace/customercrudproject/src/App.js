@@ -31,6 +31,7 @@ function App() {
       {/* <MyCustomer></MyCustomer> */}
       {/*   <Register></Register> */}
       {/*  <Test  testFun={test} testFun2={test2}></Test>  */}
+      {nvfood}
       <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </MyContext.Provider>
     </>
