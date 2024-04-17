@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 export function Navbar(props){
@@ -16,6 +17,9 @@ export function Navbar(props){
                 </li>
                 <li className="nav-item">
                 <a className="nav-link" href="#">Customers</a>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="register">REGISTER</Link>
                 </li>
             </ul>
             </div>

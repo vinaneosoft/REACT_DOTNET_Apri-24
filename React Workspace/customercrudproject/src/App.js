@@ -5,9 +5,9 @@ import { Login } from "./login/Login";
 import { MainCourse } from "./maincourse/MainCourse";
 import { MyCustomer } from "./mycustomer/MyCustomer";
 import { Register } from "./register/Register";
-import { Test } from "./test/Test";
-import { Greeting } from "./testclass/Greeting";
+
 import { MyContext } from "./context/MyContext";
+import { Route, Routes } from "react-router-dom";  //2.
 
 
 
@@ -35,13 +35,9 @@ function App() {
     <>
     <MyContext.Provider value={myData}>   {/*  3. */}
       <Header></Header>
-      {/* <Greeting></Greeting>*/}
-       <MainCourse></MainCourse> 
-      {/*  <Login></Login> */}
-      {/* <MyCustomer></MyCustomer> */}
-      {/*   <Register></Register> */}
-      {/*  <Test  testFun={test} testFun2={test2}></Test>  */}
-      {nvfood}
+     <Routes>
+          <Route path="register" element={  <Register/>  }></Route>
+     </Routes>
       <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </MyContext.Provider>
     </>
