@@ -20,6 +20,7 @@ export function Login(){
 
     return(
         <section>
+            <h4>USER LOGIN</h4>
         <form onSubmit={collectData}>
              <div className="mb-3">
                 <label htmlFor="loginType" className="form-label">Select Login Type</label>
