@@ -16,7 +16,7 @@ export function Navbar(props){
                 <Link className="nav-link" to="home">Home</Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="#">Customers</a>
+                <Link className="nav-link" to="customers">Show Customers</Link>
                 </li>
                 <li className="nav-item">
                 <Link className="nav-link" to="register">REGISTER</Link>
