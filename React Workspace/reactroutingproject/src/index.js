@@ -6,14 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import {RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {Home} from './home/Home';
 import {Login} from './login/Login';
+import {MyCustomer} from './mycustomer/MyCustomer';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<App/>
+    element:<App/>,
+    children:[
+      {
+        path:'customers',
+        element:<MyCustomer></MyCustomer>
+      }
+    ]
   },
+  
 ]);
 
 

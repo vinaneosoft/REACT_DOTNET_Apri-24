@@ -4,14 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 import {Header} from './header/Header'
 import {Footer} from './footer/Footer';
+import { Outlet } from 'react-router-dom';
 function App() {
   return (
     <>
     <Header></Header>
-    <div>
-      <h3>React Routing</h3>
-      {/** bjdsbfsfjg */}
-    </div>
+      <Outlet></Outlet>
     <Footer></Footer>
     </>
   );

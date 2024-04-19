@@ -15,6 +15,10 @@ export function Login(){
         console.log(usernameNode.current.value);
         console.log(passwordNode.current.value);
         console.log(loginType.current.value);
+
+        //test username password
+        // true
+        // redirect : App
     }
 
 
