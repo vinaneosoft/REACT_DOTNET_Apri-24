@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
 import {Home} from './home/Home';
+import {Register} from './register/Register';
 import {Login} from './login/Login';
 import {MyCustomer} from './mycustomer/MyCustomer';
+import {Child1} from './childs/Child1'
+import {Child2} from './childs/Child2'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -16,8 +19,34 @@ const router=createBrowserRouter([
     element:<App/>,
     children:[
       {
+        path:'/',
+        loader:  () => redirect('home'),
+      },
+      {
+        path:'home',
+        element:<Home></Home>,
+        children:[
+          {
+            path:'child1',
+            element:<Child1></Child1>
+          },
+          {
+            path:'child2',
+            element:<Child2></Child2>
+          }
+        ]
+      },
+      {
         path:'customers',
         element:<MyCustomer></MyCustomer>
+      },
+      {
+        path:'register',
+        element:<Register></Register>
+      },
+      {
+        path:'login',
+        element:<Login></Login>
       }
     ]
   },
