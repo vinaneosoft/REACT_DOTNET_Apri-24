@@ -38,6 +38,7 @@ function App() {
     <>
     <MyContext.Provider value={myData}>   {/*  3. */}
       <Header></Header>
+      <h6>Dynamic View on App Component</h6>
      <Routes>
           <Route path="/" element={ <Navigate to="home"></Navigate>}></Route> {/*or use Navitage to home  */}
           <Route path="home" element={ <Home/> } 
