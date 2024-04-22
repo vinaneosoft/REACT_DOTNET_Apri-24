@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"; //3.
+
 export function CustomerCard({customer}){
    /*  console.log(customer.customerImage); */
     return(
@@ -14,8 +16,7 @@ export function CustomerCard({customer}){
                 <li className="list-group-item"><i>Username: </i><b>{customer.username}</b></li>
             </ul>
             <div className="card-body">
-                <a href="#" className="card-link">EDIT</a>
-                <a href="#" className="card-link">DELETE</a>
+                <Link className="nav-link" to={`/edit/${customer.id}`}>EDIT</Link>
             </div>
         </div>
     );

@@ -50,6 +50,7 @@ function App() {
           <Route path="register" element={  <Register    />  }></Route>
           <Route path="login" element={ <Login/> }></Route>
           <Route path="customers" element={ <MyCustomer/> }></Route>
+          <Route path="edit/:cid" element={  <Register    />  }></Route>{/*  user defined variable */}
      </Routes>
       <Footer firstname="Vinay" lastname="Pawar"></Footer>
     </MyContext.Provider>

@@ -25,7 +25,7 @@ export function Register(){
 
     return (
         <section>
-            <h5>CUSTOMER INPUT FORM</h5>
+            <h5>CUSTOMER INPUT / UPDATE FORM</h5>
             <form onSubmit={collectData}>
                 <div className="mb-3">
                     <label htmlFor="id" className="form-label">ID:</label>
