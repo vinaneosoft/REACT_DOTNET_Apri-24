@@ -2,13 +2,17 @@ import "./MyCustomer.css"
 
 import { getCustomers } from "../Model/CustomerCrud";
 import { CustomerCard } from "../card/CustomerCard";
+import { useEffect } from "react";
 
 
 export function MyCustomer(){
 
-    let customers=getCustomers();
+    let customers;
+    useEffect(()=>{
+        getCustomers();
+    });
 
-    let trNodes=customers.map(customer=><tr key={customer.id}>
+   /*  let trNodes=customers.map(customer=><tr key={customer.id}>
         <td>{customer.id}</td>
         <td>{customer.customerName}</td>
         <td>{customer.customerEmail}</td>
@@ -16,13 +20,13 @@ export function MyCustomer(){
         <td>{customer.username}</td>
         <td>{customer.password}</td>
     </tr>
-    );
+    ); */
 
-    let cards=customers.map(customer=>
+   /*  let cards=customers.map(customer=>
         <div key={customer.id} className="col-md-3 border border-3 border-success">
            <CustomerCard customer={customer}></CustomerCard>
         </div>
-        );
+        ); */
     return(
         <>
         <table className="table table-hover">
@@ -37,12 +41,12 @@ export function MyCustomer(){
                 </tr>
             </thead>
             <tbody>
-                {trNodes}
+              {/*   {trNodes} */}
             </tbody>
         </table>
         <section>
             <div className="row">
-                {cards}
+               {/*  {cards} */}
             </div>
         </section>
         </>

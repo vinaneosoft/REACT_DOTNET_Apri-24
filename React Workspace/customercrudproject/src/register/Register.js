@@ -8,13 +8,13 @@ export function Register(){
 
     // extract parameters from route : hook : useParams
 
-    let paramObject= useParams();
+    let paramObject= useParams(); // 3. extracting data
    // console.log(paramObject);
     //console.log(paramObject.cid);
 
     // object destructuring
 
-    let {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
+    const {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
     console.log(cid);
     console.log(uname);
     // in future in react http, we are going to search a customer at backend having id extracted from route

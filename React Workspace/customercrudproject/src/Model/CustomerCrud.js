@@ -1,5 +1,10 @@
+
 import { useState } from "react";
 import { Customer } from "./Customer";
+import axios from "axios";
+
+const url="http://localhost:3001/customers";
+
 
 let customers= [
     new Customer("c34",'Ritu Soni',"ritu@gmail.com",7777777777,"ritu","Ritu@123", "customer1.jpeg"),
@@ -16,6 +21,8 @@ export function addCustmer(customer){
     // new way of state management : react http
 }
 
-export function getCustomers(){
+export async function getCustomers(){
+        const response= await axios.get(url); // backend request
+        console.log(response);
     return customers;
 }
