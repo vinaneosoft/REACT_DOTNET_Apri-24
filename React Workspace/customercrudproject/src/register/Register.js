@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { Customer } from "../Model/Customer";
 import { addCustmer } from "../Model/CustomerCrud";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export function Register(){
 
+    // extract parameters from route : hook : useParams
+
+    let paramObject= useParams();
+   // console.log(paramObject);
+    //console.log(paramObject.cid);
+
+    // object destructuring
+
+    let {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
+    console.log(cid);
+    console.log(uname);
+    // in future in react http, we are going to search a customer at backend having id extracted from route
     let [customer, setCustomer]=useState(new Customer());
      /** customer : current state of Customer type object */
 

@@ -16,7 +16,7 @@ export function CustomerCard({customer}){
                 <li className="list-group-item"><i>Username: </i><b>{customer.username}</b></li>
             </ul>
             <div className="card-body">
-                <Link className="nav-link" to={`/edit/${customer.id}`}>EDIT</Link>
+                <Link className="nav-link" to={`/edit/${customer.id}/${customer.username}`}>EDIT</Link> {/* 2. pass the data from route */}
             </div>
         </div>
     );
