@@ -7,16 +7,16 @@ import { useEffect, useState } from "react";
 
 export function MyCustomer(){
 
-    let custs=[];
+  
     let [customers, setCustomers]=useState([]);
+    async function fetchData(){
+        customers=await getCustomers();
+        console.log("at MyCustomer");
+        setCustomers([...customers]);
+    }
     useEffect(()=>{
-        async function fetchData(){
-            customers=await getCustomers();
-            console.log("at MyCustomer");
-            setCustomers([...customers]);
-        }
         fetchData();
-    });
+    }, []);
 
     let trNodes=customers.map(customer=><tr key={customer.id}>
         <td>{customer.id}</td>
