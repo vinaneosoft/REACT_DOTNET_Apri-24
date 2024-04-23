@@ -15,9 +15,10 @@ let customers= [
     new Customer("c32","Ritu Khanna","Ritu@gmail.com", 8686868686,"ritu","ritu@123"),
 ]
 export async function addCustmer(customer){
-    console.log(customer);
+   // console.log(customer);
     const response=await axios.post(url,customer);
-    console.log(response);
+   // console.log(response);
+   return response.status;
     // connect to backend to add in data in json file
 }
 

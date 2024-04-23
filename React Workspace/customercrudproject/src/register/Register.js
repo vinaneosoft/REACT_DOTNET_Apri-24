@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Customer } from "../Model/Customer";
 import { addCustmer } from "../Model/CustomerCrud";
 import { Link, useParams } from "react-router-dom";
@@ -28,9 +28,11 @@ export function Register(){
             return {...currentObject, [event.target.name]:event.target.value}
         })
      }
-     function collectData(e){
+     async function collectData(e){
         e.preventDefault();
-        addCustmer(customer);
+        const status= await addCustmer(customer);
+        if(status===201)
+            window.alert("Data added successfully")
      }
 
     return (
