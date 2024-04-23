@@ -22,7 +22,12 @@ export function addCustmer(customer){
 }
 
 export async function getCustomers(){
-        const response= await axios.get(url); // backend request
-        console.log(response);
-    return customers;
+    const response= await axios.get(url); // backend request
+   
+    //console.log(response);
+   // console.log("other work");
+    //customers=response.data;
+    //console.log(customers);
+    // or return response.data;
+    return response.data;
 }
