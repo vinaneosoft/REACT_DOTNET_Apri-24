@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Customer } from "../Model/Customer";
 import { addCustmer } from "../Model/CustomerCrud";
 import { Link, useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export function Register(){
+    // take function red from useNavigate
+    const navigate=useNavigate();
 
     // extract parameters from route : hook : useParams
 
@@ -13,7 +15,6 @@ export function Register(){
     //console.log(paramObject.cid);
 
     // object destructuring
-
     const {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
     console.log(cid);
     console.log(uname);
@@ -31,8 +32,12 @@ export function Register(){
      async function collectData(e){
         e.preventDefault();
         const status= await addCustmer(customer);
-        if(status===201)
-            window.alert("Data added successfully")
+        if(status===201){
+           window.alert("You are registered successfully...")
+           navigate("/customers");
+        // routing logic// view gets automatically updated
+        // without clicking on any link
+        }
      }
 
     return (
