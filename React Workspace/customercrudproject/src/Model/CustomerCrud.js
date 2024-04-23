@@ -14,14 +14,14 @@ let customers= [
     new Customer("c2","Kiran Pujari","kiran@gmail.com", 9090909090,"kiran","kiran@123", "customer5.jpg"),
     new Customer("c32","Ritu Khanna","Ritu@gmail.com", 8686868686,"ritu","ritu@123"),
 ]
-export function addCustmer(customer){
+export async function addCustmer(customer){
     console.log(customer);
-    customers.push(customer); // mutable array : avoid it
-    console.log(customers); // immutable  array logic is pending : spread operator
-    // new way of state management : react http
+    const response=await axios.post(url,customer);
+    console.log(response);
+    // connect to backend to add in data in json file
 }
 
 export async function getCustomers(){
-   const response= await axios.get(url);
+   const response= await axios.get(url); // connecting to external system
    return response.data;
 }

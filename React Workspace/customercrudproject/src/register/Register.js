@@ -30,8 +30,6 @@ export function Register(){
      }
      function collectData(e){
         e.preventDefault();
-       // console.log(customer);
-
         addCustmer(customer);
      }
 
