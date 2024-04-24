@@ -19,5 +19,5 @@ export async function getCustomers(){
 
 export async function deleteCutomerById(id){
    const response=await axios.delete(`${url}/${id}`); // or url+"/"+id
-   console.log(response);
+   return response.status;  
 }

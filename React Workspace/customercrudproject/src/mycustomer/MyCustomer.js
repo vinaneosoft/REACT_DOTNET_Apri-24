@@ -7,8 +7,17 @@ import { useEffect, useState } from "react";
 
 export function MyCustomer(){
 
-
     let [customers, setCustomers]=useState([]);
+
+    async function  deleteCust(id){
+        const resstatus=  await deleteCutomerById(id);
+        if(resstatus==200){
+           window.alert("customer account Deleted successfully...");
+           navigate("/customers");
+        }
+        else
+           window.alert("Something went wrong.....");
+   }
     async function fetchData(){
         customers=await getCustomers();
         setCustomers([...customers]); // mandatory : re rendered
@@ -29,7 +38,7 @@ export function MyCustomer(){
 
      let cards=customers.map(customer=>
         <div key={customer.id} className="col-md-3 border border-3 border-success">
-           <CustomerCard customer={customer}></CustomerCard>
+           <CustomerCard customer={customer} ></CustomerCard>
         </div>
         ); 
     return(
