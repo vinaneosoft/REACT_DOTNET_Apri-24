@@ -15,8 +15,9 @@ export function CustomerCard({customer}){
                 <li className="list-group-item"><i>Mobile No: </i><b>{customer.customerContact}</b></li>
                 <li className="list-group-item"><i>Username: </i><b>{customer.username}</b></li>
             </ul>
-            <div className="card-body">
-                <Link className="nav-link" to={`/edit/${customer.id}/${customer.username}`}>EDIT</Link> {/* 2. pass the data from route */}
+            <div className="card-body d-flex justify-content-between">
+                <Link className="btn btn-info" to={`/edit/${customer.id}/${customer.username}`}>EDIT</Link> {/* 2. pass the data from route */}
+                <button className="btn btn-danger">DELETE</button>
             </div>
         </div>
     );
