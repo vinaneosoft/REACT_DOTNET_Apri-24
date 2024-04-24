@@ -27,3 +27,8 @@ export async function searchCustomerById(id){
   // console.log(response.data);
    return response.data;
 }
+
+export async function updateCustomer(customer){
+   const response=await axios.put(`${url}/${customer.id}`,customer)
+   console.log(response); // incomplete : we will complete tomorrow
+} 

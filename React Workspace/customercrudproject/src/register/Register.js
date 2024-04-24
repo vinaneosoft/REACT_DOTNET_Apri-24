@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { Customer } from "../Model/Customer";
-import { addCustmer, searchCustomerById } from "../Model/CustomerCrud";
+import { addCustmer, searchCustomerById, updateCustomer } from "../Model/CustomerCrud";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -42,8 +42,8 @@ export function Register(){
             return {...currentObject, [event.target.name]:event.target.value}
         })
      }
-     async function collectData(e){
-        e.preventDefault();
+
+     async function add(){
         const status= await addCustmer(customer);
         if(status===201){
            window.alert("You are registered successfully...")
@@ -51,6 +51,17 @@ export function Register(){
         // routing logic// view gets automatically updated
         // without clicking on any link
         }
+     }
+
+     async function update(){
+        updateCustomer(customer);
+     }
+    function collectData(e){
+        e.preventDefault();
+        if(cid===undefined)
+            add();
+        else
+            update();
      }
 
     return (
@@ -79,7 +90,7 @@ export function Register(){
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Set Password:</label>
-                    <input type="password" className="form-control" id="password" name="password"  value={customer.password} onChange={handleEvent} readOnly={readonly}></input>
+                    <input type="password" className="form-control" id="password" name="password"  value={customer.password} onChange={handleEvent} ></input>
                 </div>
                 <input type="submit" className="btn btn-primary" value={heading}  onChange={handleEvent}></input>
             </form>
