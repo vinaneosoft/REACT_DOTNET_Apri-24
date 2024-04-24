@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Customer } from "../Model/Customer";
-import { addCustmer } from "../Model/CustomerCrud";
+import { addCustmer, searchCustomerById } from "../Model/CustomerCrud";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +18,14 @@ export function Register(){
     const {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
     console.log(cid);
     console.log(uname);
+
+    if(cid!=undefined){
+        search();
+    }
+    async function search(){
+        await searchCustomerById(cid);
+    }
+
     // in future in react http, we are going to search a customer at backend having id extracted from route
     let [customer, setCustomer]=useState(new Customer());
      /** customer : current state of Customer type object */

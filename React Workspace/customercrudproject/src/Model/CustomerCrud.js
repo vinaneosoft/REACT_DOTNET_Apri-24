@@ -21,3 +21,8 @@ export async function deleteCutomerById(id){
    const response=await axios.delete(`${url}/${id}`); // or url+"/"+id
    return response.status;  
 }
+
+export async function searchCustomerById(id){
+   const response=await axios.get(`${url}/${id}`); // or url+"/"+id
+   console.log(response.data);
+}

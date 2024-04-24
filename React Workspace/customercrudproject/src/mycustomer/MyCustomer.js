@@ -1,6 +1,5 @@
 import "./MyCustomer.css"
-
-import { getCustomers } from "../Model/CustomerCrud";
+import {deleteCutomerById,getCustomers} from "../Model/CustomerCrud"; // u can use * as prefix
 import { CustomerCard } from "../card/CustomerCard";
 import { useEffect, useState } from "react";
 
@@ -13,7 +12,7 @@ export function MyCustomer(){
         const resstatus=  await deleteCutomerById(id);
         if(resstatus==200){
            window.alert("customer account Deleted successfully...");
-           navigate("/customers");
+           fetchData();
         }
         else
            window.alert("Something went wrong.....");
@@ -38,7 +37,7 @@ export function MyCustomer(){
 
      let cards=customers.map(customer=>
         <div key={customer.id} className="col-md-3 border border-3 border-success">
-           <CustomerCard customer={customer} ></CustomerCard>
+           <CustomerCard customer={customer} deleteCust={deleteCust}></CustomerCard>
         </div>
         ); 
     return(

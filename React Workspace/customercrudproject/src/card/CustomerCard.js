@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"; //3.
-import { deleteCutomerById } from "../Model/CustomerCrud";
 
-export function CustomerCard({customer}){
+
+export function CustomerCard({customer, deleteCust}){
    /*  console.log(customer.customerImage); */
 
     return(
