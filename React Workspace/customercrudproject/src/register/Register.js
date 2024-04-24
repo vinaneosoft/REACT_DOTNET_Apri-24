@@ -7,29 +7,26 @@ import { useNavigate } from "react-router-dom";
 export function Register(){
     // take function red from useNavigate
     const navigate=useNavigate();
-
     // extract parameters from route : hook : useParams
-
     let paramObject= useParams(); // 3. extracting data
    // console.log(paramObject);
     //console.log(paramObject.cid);
-
     // object destructuring
     const {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
     console.log(cid);
-    console.log(uname);
-
-    if(cid!=undefined){
-        search();
-    }
-    async function search(){
-        await searchCustomerById(cid);
-    }
-
+    //console.log(uname);
     // in future in react http, we are going to search a customer at backend having id extracted from route
     let [customer, setCustomer]=useState(new Customer());
      /** customer : current state of Customer type object */
-
+    async function search(){
+        const cust=await searchCustomerById(cid);
+        setCustomer(cust);
+    }
+    useEffect(()=>{
+        if(cid!=undefined){
+            search();
+        }
+    },[]);
      function handleEvent(event){
        // console.log(event.target.name);
        // console.log(event.target.value);
@@ -50,7 +47,7 @@ export function Register(){
 
     return (
         <section>
-            <h5>CUSTOMER INPUT / UPDATE FORM</h5>
+            <h5>CUSTOMER REGISTER / UPDATE FORM</h5>
             <form onSubmit={collectData}>
                 <div className="mb-3">
                     <label htmlFor="id" className="form-label">ID:</label>
@@ -62,7 +59,7 @@ export function Register(){
                 </div>
                 <div className="mb-3">
                     <label htmlFor="customerContact" className="form-label">Mobile Number:</label>
-                    <input type="text" className="form-control" id="customerContact" name="customerContact"   value={customer.customerContact} onChange={handleEvent}></input>
+                    <input type="number" className="form-control" id="customerContact" name="customerContact"   value={customer.customerContact} onChange={handleEvent}></input>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="customerEmail" className="form-label">Email Id:</label>
@@ -74,7 +71,7 @@ export function Register(){
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Set Password:</label>
-                    <input type="text" className="form-control" id="password" name="password"  value={customer.password} onChange={handleEvent}></input>
+                    <input type="password" className="form-control" id="password" name="password"  value={customer.password} onChange={handleEvent}></input>
                 </div>
                 <input type="submit" className="btn btn-primary" defaultValue="REGISTER"></input>
             </form>

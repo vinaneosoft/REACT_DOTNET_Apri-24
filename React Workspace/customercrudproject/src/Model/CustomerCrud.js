@@ -24,5 +24,6 @@ export async function deleteCutomerById(id){
 
 export async function searchCustomerById(id){
    const response=await axios.get(`${url}/${id}`); // or url+"/"+id
-   console.log(response.data);
+  // console.log(response.data);
+   return response.data;
 }
