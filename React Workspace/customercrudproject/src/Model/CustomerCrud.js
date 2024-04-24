@@ -16,3 +16,7 @@ export async function getCustomers(){
    const response= await axios.get(url); // connecting to external system
    return response.data;
 }
+
+export async function deleteCutomerById(id){
+   
+}

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom"; //3.
+import { deleteCutomerById } from "../Model/CustomerCrud";
 
 export function CustomerCard({customer}){
    /*  console.log(customer.customerImage); */
+
+   async function  deleteCust(id){
+            await deleteCutomerById(id);
+    }
+
     return(
         <div className="card bg-warning">
             <img src={require("../Resources/"+customer.customerImage)} className="card-img-top profilePic" alt="..."></img>
@@ -17,7 +23,7 @@ export function CustomerCard({customer}){
             </ul>
             <div className="card-body d-flex justify-content-between">
                 <Link className="btn btn-info" to={`/edit/${customer.id}/${customer.username}`}>EDIT</Link> {/* 2. pass the data from route */}
-                <button className="btn btn-danger">DELETE</button>
+                <button className="btn btn-danger" onClick={()=>deleteCust(customer.id)}>DELETE</button>
             </div>
         </div>
     );
