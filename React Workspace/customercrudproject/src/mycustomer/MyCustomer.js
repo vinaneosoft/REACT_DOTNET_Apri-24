@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export function MyCustomer(){
 
     let [customers, setCustomers]=useState([]);
-    let [searchId, setId]=useState(0);
+    let [searchId, setId]=useState("");
 
     async function  deleteCust(id){
         const resstatus=  await deleteCutomerById(id);
@@ -18,18 +18,30 @@ export function MyCustomer(){
         else
            window.alert("Something went wrong.....");
    }
-   async function searchCustomer(){
-        await searchCustomerById(searchId)
-        .then(data=>console.log(data)).catch(()=>console.log("error"));
+   async function searchCustomer(event){
+        console.log(event.target.value);
+        setId(event.target.value);
+       await searchCustomerById(event.target.value)
+        .then((data)=>{
+            console.log("data from backend", data); // object / array
+           // console.log(temp);
+            if(event.target.value!=""){
+                let temp=[data];  
+                setCustomers(temp); // array
+            }
+            else
+                setCustomers(data); // array
+        })
+        .catch(()=>console.log("error"));
    }
     async function fetchData(){
+        console.log("in fetch data");
         customers=await getCustomers();
         setCustomers([...customers]); // mandatory : re rendered
     }
     useEffect( ()=>{
        fetchData();
-       searchCustomer();
-    }, [searchId]);
+    }, []);
 
     let trNodes=customers.map(customer=><tr key={customer.id}>
         <td>{customer.id}</td>
@@ -65,7 +77,7 @@ export function MyCustomer(){
         </table>
         <section>
             <label htmlFor="cid">Enter Id to search customer: </label>
-            <input type="text" value={searchId} id="cid" onChange={(event)=>setId(event.target.value)}></input>
+            <input type="text" value={searchId} id="cid" onChange={searchCustomer}></input>
             <button>SEARCH</button>
             <div className="row">
                {cards} 
