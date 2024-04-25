@@ -30,5 +30,5 @@ export async function searchCustomerById(id){
 
 export async function updateCustomer(customer){
    const response=await axios.put(`${url}/${customer.id}`,customer)
-   console.log(response); // incomplete : we will complete tomorrow
+   return response.status;
 } 

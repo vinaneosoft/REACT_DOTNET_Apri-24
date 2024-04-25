@@ -48,13 +48,21 @@ export function Register(){
         if(status===201){
            window.alert("You are registered successfully...")
            navigate("/customers");
-        // routing logic// view gets automatically updated
-        // without clicking on any link
+        }
+        else{
+            window.alert("Something went wrong....");
         }
      }
 
      async function update(){
-        updateCustomer(customer);
+        const updatestatus=await updateCustomer(customer);
+        if(updatestatus==200){
+            window.alert("Customer updated successfully.....");
+            navigate("/customers");
+        }
+        else{
+            window.alert("Something went wrong....");
+        }
      }
     function collectData(e){
         e.preventDefault();
