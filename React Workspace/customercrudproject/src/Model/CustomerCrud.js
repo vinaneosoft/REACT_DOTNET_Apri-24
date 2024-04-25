@@ -23,13 +23,9 @@ export async function deleteCutomerById(id){
 }
 
 export async function searchCustomerById(id){
-   axios.get(`${url}/${id}`).then(response=>{
-     // console.log(response.data);
-      return response.data;
-  })
-  .catch(()=>{console.log("error occured")});// or url+"/"+id
-  // console.log(response.data);
-  // return response.data;
+   axios.get(`${url}/${id}`).then(response=>response.data)
+  .catch(()=>console.log("error occured"));
+ 
 }
 
 export async function updateCustomer(customer){
