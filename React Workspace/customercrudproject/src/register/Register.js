@@ -42,7 +42,6 @@ export function Register(){
             return {...currentObject, [event.target.name]:event.target.value}
         })
      }
-
      async function add(){
         const status= await addCustmer(customer);
         if(status===201){
@@ -53,7 +52,6 @@ export function Register(){
             window.alert("Something went wrong....");
         }
      }
-
      async function update(){
         const updatestatus=await updateCustomer(customer);
         if(updatestatus==200){

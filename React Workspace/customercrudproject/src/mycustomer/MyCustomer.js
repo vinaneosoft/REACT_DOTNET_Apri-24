@@ -1,5 +1,5 @@
 import "./MyCustomer.css"
-import {deleteCutomerById,getCustomers} from "../Model/CustomerCrud"; // u can use * as prefix
+import {deleteCutomerById,getCustomers, searchCustomerById} from "../Model/CustomerCrud"; // u can use * as prefix
 import { CustomerCard } from "../card/CustomerCard";
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export function MyCustomer(){
 
     let [customers, setCustomers]=useState([]);
+    let [searchId, setId]=useState(0);
 
     async function  deleteCust(id){
         const resstatus=  await deleteCutomerById(id);
@@ -17,6 +18,14 @@ export function MyCustomer(){
         else
            window.alert("Something went wrong.....");
    }
+   async function searchCustomer(event){
+       console.log(event.target.value);
+        setId(event.target.value);
+        //console.log(searchId);
+        await searchCustomerById(event.target.value)
+       // console.log(searchCustomer);
+   }
+
     async function fetchData(){
         customers=await getCustomers();
         setCustomers([...customers]); // mandatory : re rendered
@@ -58,6 +67,8 @@ export function MyCustomer(){
             </tbody>
         </table>
         <section>
+            <label htmlFor="cid">Enter Id to search customer: </label>
+            <input type="text" value={searchId} id="cid" onChange={searchCustomer}></input>
             <div className="row">
                {cards} 
             </div>
