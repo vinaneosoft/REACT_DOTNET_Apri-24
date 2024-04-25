@@ -18,21 +18,18 @@ export function MyCustomer(){
         else
            window.alert("Something went wrong.....");
    }
-   async function searchCustomer(event){
-       console.log(event.target.value);
-        setId(event.target.value);
-        //console.log(searchId);
-        await searchCustomerById(event.target.value)
-       // console.log(searchCustomer);
+   async function searchCustomer(){
+        await searchCustomerById(searchId)
+        .then(data=>console.log(data)).catch(()=>console.log("error"));
    }
-
     async function fetchData(){
         customers=await getCustomers();
         setCustomers([...customers]); // mandatory : re rendered
     }
     useEffect( ()=>{
        fetchData();
-    }, []);
+       searchCustomer();
+    }, [searchId]);
 
     let trNodes=customers.map(customer=><tr key={customer.id}>
         <td>{customer.id}</td>
@@ -68,7 +65,8 @@ export function MyCustomer(){
         </table>
         <section>
             <label htmlFor="cid">Enter Id to search customer: </label>
-            <input type="text" value={searchId} id="cid" onChange={searchCustomer}></input>
+            <input type="text" value={searchId} id="cid" onChange={(event)=>setId(event.target.value)}></input>
+            <button>SEARCH</button>
             <div className="row">
                {cards} 
             </div>

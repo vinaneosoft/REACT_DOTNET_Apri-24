@@ -23,9 +23,8 @@ export async function deleteCutomerById(id){
 }
 
 export async function searchCustomerById(id){
-   axios.get(`${url}/${id}`).then(response=>response.data)
-  .catch(()=>console.log("error occured"));
- 
+   const response=await axios.get(`${url}/${id}`).catch((reason)=>{console.log("error")} );
+   return response.data;
 }
 
 export async function updateCustomer(customer){
