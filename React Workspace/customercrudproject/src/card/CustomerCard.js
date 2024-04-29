@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"; //3.
-
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export function CustomerCard({customer, deleteCust}){
    /*  console.log(customer.customerImage); */
@@ -19,7 +20,7 @@ export function CustomerCard({customer, deleteCust}){
             </ul>
             <div className="card-body d-flex justify-content-between">
                 <Link className="btn btn-info" to={`/edit/${customer.id}/${customer.username}`}>EDIT</Link> {/* 2. pass the data from route */}
-                <button className="btn btn-danger" onClick={()=>deleteCust(customer.id)}>DELETE</button>
+                <Button startIcon={<DeleteIcon />}   color="error" size="small" variant="contained" onClick={()=>deleteCust(customer.id)}> DELETE </Button>
             </div>
         </div>
     );

@@ -13,8 +13,6 @@ import { Child1 } from "./childs/Child1";
 import { Child2 } from "./childs/Child2";
 
 
-
-
 function App() {
 
 

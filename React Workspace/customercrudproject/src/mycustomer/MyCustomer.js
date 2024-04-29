@@ -2,7 +2,7 @@ import "./MyCustomer.css"
 import {deleteCutomerById,getCustomers, searchCustomerById} from "../Model/CustomerCrud"; // u can use * as prefix
 import { CustomerCard } from "../card/CustomerCard";
 import { useEffect, useState } from "react";
-
+import TextField from '@mui/material/TextField';
 
 export function MyCustomer(){
 
@@ -77,8 +77,8 @@ export function MyCustomer(){
         </table>
         <section>
             <label htmlFor="cid">Enter Id to search customer: </label>
-            <input type="text" value={searchId} id="cid" onChange={searchCustomer}></input>
-            <button>SEARCH</button>
+            <TextField id="cid" label="customer id" variant="standard" value={searchId} onChange={searchCustomer} />
+            <p></p>
             <div className="row">
                {cards} 
             </div>

@@ -1,10 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
 import { MainCourse } from "../maincourse/MainCourse";
+import { Counter } from "../counter/Counter";
 
 
 export function Home(){
     return (
         <div>
+            <h4>REACT STORE</h4>
+            <Counter></Counter>
+            <hr></hr>
             <h5>Welcome to Ani's Kitchen</h5>
             <h6>You can order food from below main course</h6>
             <MainCourse></MainCourse>
