@@ -1,7 +1,7 @@
 
 
-adminusername="admin1";
-adminpassword="admin1@123"
+const adminusername="admin1";
+const adminpassword="admin1@123"
 
 
 export function adminLogin(username, password){

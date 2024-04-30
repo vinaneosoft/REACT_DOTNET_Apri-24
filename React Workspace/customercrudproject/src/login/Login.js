@@ -4,23 +4,32 @@
 
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { adminLogin } from "../Model/AdminLogin";
 
 export function Login(){
     let usernameNode=useRef();
     let passwordNode=useRef();
     let loginType=useRef();
 
-    function collectData(e){
+    function loginCheck(e){
         e.preventDefault();
-        console.log(usernameNode.current.value);
-        console.log(passwordNode.current.value);
-        console.log(loginType.current.value);
+       // console.log(usernameNode.current.value);
+       // console.log(passwordNode.current.value);
+       // console.log(loginType.current.value);
+       let flag=false;
+       if(loginType.current.value==="admin"){
+            flag=adminLogin(usernameNode.current.value,passwordNode.current.value)
+       }
+       if(flag===true)
+           alert("You are logged in successfully");
+       else
+           alert("Incorrect username or password");
     }
-
+  
 
     return(
         <section>
-        <form onSubmit={collectData}>
+        <form onSubmit={loginCheck}>
              <div className="mb-3">
                 <label htmlFor="loginType" className="form-label">Select Login Type</label>
                 <select className="form-control" id="loginType" ref={loginType}>
