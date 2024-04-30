@@ -17,7 +17,7 @@ export function Register(){
     //console.log(paramObject.cid);
     // object destructuring
     const {cid, uname}=useParams();  // let cid=o.cid; let uname=o.uname;
-    console.log(cid);
+   // console.log(cid);
     //console.log(uname);
     // in future in react http, we are going to search a customer at backend having id extracted from route
     let [customer, setCustomer]=useState(new Customer());
@@ -37,7 +37,7 @@ export function Register(){
         setCustomer(new Customer());
     }
     useEffect(()=>{
-        console.log("useEffect of register called");
+        //console.log("useEffect of register called");
         if(cid!==undefined){
             search();
         }
