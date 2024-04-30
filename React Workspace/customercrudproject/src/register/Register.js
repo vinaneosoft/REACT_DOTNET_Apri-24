@@ -24,17 +24,26 @@ export function Register(){
     let [heading, setHeading]=useState("REGISTER");
     let [readonly, setReadOnly]=useState(false);
      /** customer : current state of Customer type object */
+
     async function search(){
         const cust=await searchCustomerById(cid);
         setCustomer(cust);
         setHeading("UPDATE");
         setReadOnly(true);
     }
+    function resetForm(){
+        setHeading("REGISTER")
+        setReadOnly(false);
+        setCustomer(new Customer());
+    }
     useEffect(()=>{
+        console.log("useEffect of register called");
         if(cid!==undefined){
             search();
         }
-    },[]);
+        else
+           resetForm(); 
+    },[cid]);
      function handleEvent(event){
        // console.log(event.target.name);
        // console.log(event.target.value);
@@ -73,7 +82,7 @@ export function Register(){
     return (
         <section>
             <h5>CUSTOMER {heading} FORM</h5>
-            <form onSubmit={collectData} className="bg-warning p-2">
+            <form onSubmit={collectData} onReset={search} className="bg-warning p-2">
                 <div className="mb-3">
                     <label htmlFor="id" className="form-label">ID:</label>
                     <input type="text" className="form-control" id="id" name="id" value={customer.id} onChange={handleEvent} readOnly={readonly}></input>
@@ -99,6 +108,7 @@ export function Register(){
                     <input type="password" className="form-control" id="password" name="password"  value={customer.password} onChange={handleEvent} ></input>
                 </div>
                 <input type="submit" className="btn btn-primary" value={heading}  onChange={handleEvent}></input>
+                <input type="reset" className="btn btn-secondary"></input>
             </form>
             <p>
                 <i>Already a user??? click <Link to="/login">here</Link> to login!!!!</i>
