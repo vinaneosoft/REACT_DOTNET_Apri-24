@@ -45,7 +45,7 @@ function App() {
               <Route path="child2" element={<Child2 />}></Route> {/* /home/child2 */}
             </>
           }></Route>
-          <Route path="register" element={  <Register    />  }></Route>
+          <Route path="register" element={  <Register    /> }></Route>
           <Route path="login" element={ <Login/> }></Route>
           <Route path="customers" element={ <MyCustomer/> }></Route>
           <Route path="edit/:cid/:uname" element={  <Register    />  }></Route>{/* 1. configure a route with parameter,  user defined variable */}

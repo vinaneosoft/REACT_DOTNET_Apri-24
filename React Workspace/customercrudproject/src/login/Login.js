@@ -2,15 +2,19 @@
  * input control : uncontrolled : defaultValue, ref
  */
 
-import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { adminLogin } from "../Model/AdminLogin";
+import Cookies from 'universal-cookie';
 
 export function Login(){
     let usernameNode=useRef();
     let passwordNode=useRef();
     let loginType=useRef();
 
+    const navigate= useNavigate();
+
+    let [errorMessage, setMessage]=useState("");
     function loginCheck(e){
         e.preventDefault();
        // console.log(usernameNode.current.value);
@@ -20,15 +24,24 @@ export function Login(){
        if(loginType.current.value==="admin"){
             flag=adminLogin(usernameNode.current.value,passwordNode.current.value)
        }
-       if(flag===true)
+       if(flag===true){
            alert("You are logged in successfully");
-       else
-           alert("Incorrect username or password");
+           setMessage("");
+           const cookies = new Cookies();
+           cookies.set('admin', usernameNode.current.value);
+           navigate('/home');
+       }
+       else{
+            setMessage("Incorrect username or password");
+        }
     }
   
 
     return(
         <section>
+            <div>
+                    {errorMessage}
+            </div>
         <form onSubmit={loginCheck}>
              <div className="mb-3">
                 <label htmlFor="loginType" className="form-label">Select Login Type</label>
